@@ -3,6 +3,12 @@ A Android USB driver and demo for PL2303HXA(only pl2303hxa), implemented with Ja
 
 Android上PL2303HXA（仅针对PL2303HXA，其他型号不行）的USB驱动实现，基于Java应用层的，因此无需修改内核、无需Root权限。Android3.0以上，需要USBHOST功能。带OTG的设备基本都可以。
 
+### 背景
+PL2303HX的其他型号(如PL2303HXD)官方已经出了驱动库了，但是HXA的官方已经没再出了，原因是官方已经停产HXA了，但是在国内，还有很多山寨的HXA型号在卖（没错，说的就是淘宝上），对于这类器件该库也是适用的。
+
+补充一点大部分代码来自于之前的工作单位，它们形成于两年前（2013年底）,当时因为做Android平板和单片机之间的通信而积累了这部分代码，弯路走了不少，现在放出代码也正是希望后面做接触这块的同行可以少走点弯路:)
+
+### 说明
 核心的实现是PL2303Driver类，封装了PL2303HXA的基本操作。该类通过一个UsbDevice(当然必须是PL2303HXA设备的)对象进行构造。
 
 注意：AndroidManifest.xml文件中需添加两项USB权限
